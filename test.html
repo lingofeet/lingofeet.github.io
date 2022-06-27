@@ -1,0 +1,62 @@
+<html>
+  <body>
+    <style>
+      #container {
+	  width: 100px;
+	  border: 1px solid red;
+      }
+      span {
+	  vertical-align: top;
+	  display:inline-block;
+      } 
+      #editspan {
+	  min-height: 14px;
+	  min-width: 40px;
+	  max-width: 100px;
+      }
+      #editspan:focus {
+	  outline: none;
+      }
+      .move {
+	  display:inline-block;
+      }
+      
+
+      /* not needed */
+      #inputwrap {
+	  display: inline;
+	  border: 1px solid black;
+/*	  display: flex;*/
+      }
+      input {
+	  /*	  min-width: 40px;*/
+	  width: 30px;
+	  flex-grow: 1;
+	  resize: horizontal;
+      }
+    </style>
+    <div id="container">
+      <span>hello </span>
+      <span>hello </span>
+      <span>hello </span>
+      <span>hello </span>
+      <span>hello </span>
+      <div class="move">
+	<span role="textbox" id="editspan" contenteditable>hello </span><br/>
+	<span id="suggestions">sug1<br/>sug2</span>
+      </div>
+      
+<!--      <div id="inputwrap"><input></input></div>-->
+    </div>
+    <script>
+      var edit = document.getElementById("editspan")
+
+      edit.focus()
+
+      edit.addEventListener("input", function() {
+	  console.log("edit input")
+      })
+      
+      </script>
+  </body>
+</html>
